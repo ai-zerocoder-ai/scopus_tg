@@ -105,7 +105,7 @@ def handle_quote(message):
             reset_time = datetime.datetime.fromtimestamp(int(reset_time)).strftime('%Y-%m-%d %H:%M:%S')
 
         response_message = (
-            f"Информация о квотах на запросы по базе Scopus:\n"
+            f"Статус квот на запросы по базе Scopus:\n"
             f"Лимит запросов: {quota_info.get('X-RateLimit-Limit', 'Неизвестно')}\n"
             f"Оставшиеся запросы: {quota_info.get('X-RateLimit-Remaining', 'Неизвестно')}\n"
             f"Сброс квот: {reset_time}\n"
