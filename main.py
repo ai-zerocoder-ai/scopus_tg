@@ -2,6 +2,7 @@ import os
 import requests
 import telebot
 import re
+import datetime
 from dotenv import load_dotenv
 
 # Загрузка переменных окружения
@@ -51,7 +52,7 @@ def search_scopus(query):
         })
     return articles
 
-@bot.message_handler(commands=['scopus'])
+@bot.message_handler(commands=['scopus', 'Scopus'])
 def handle_scopus(message):
     query = re.sub(r"^/scopus", "", message.text, flags=re.IGNORECASE).strip()
     if not query:
